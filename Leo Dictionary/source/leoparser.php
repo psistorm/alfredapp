@@ -31,7 +31,7 @@ class LeoParser{
 			$subElements = $element->getElementsByTagName("small");
 			do {
 				$moreTags = $this->removeSmallTags($element);
-			} while($moreTags->length != 0);
+			} while($moreTags != 0);
 			$this->removeSmallTags($element);
 
 			$isSearchWord = $this->isSearchWord($element);

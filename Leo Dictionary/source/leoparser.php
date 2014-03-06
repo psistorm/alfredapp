@@ -9,7 +9,7 @@ class LeoParser{
 		$doc = new DOMDocument();
 		$doc->loadHtml($input);
 		$xpath = new DOMXPath($doc);
-		$mainElements = $xpath->query("//div[@class='section results']");
+		$mainElements = $xpath->query("//div[@class='section wgt']");
 		
 		$resultArray = array();
 		foreach ($mainElements as $mainElement) {
@@ -22,7 +22,7 @@ class LeoParser{
 		$wordDoc = new DOMDocument();
 		$wordDoc->loadHtml($input);
 		$wordXPath = new DOMXPath($wordDoc);
-		$elements = $wordXPath->query("//table/*/tr/td[@class='text']");
+		$elements = $wordXPath->query("//table/*/tr/td[@data-dz-attr='relink']");
 		$output = "";
 
 		$i = 1;

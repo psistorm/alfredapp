@@ -4,10 +4,20 @@
 <dict>
 	<key>bundleid</key>
 	<string>psistorm.alfed.leo</string>
+	<key>category</key>
+	<string>Internet</string>
 	<key>connections</key>
 	<dict>
 		<key>206533A2-C691-4EBD-9DCE-29FFF6E4C718</key>
 		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E6BB91C5-8661-40E6-BAFB-D7863034A832</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string>Open original word in Leo</string>
+			</dict>
 			<dict>
 				<key>destinationuid</key>
 				<string>2EFE8987-544C-4B60-9A2B-B43FEECCAFB7</string>
@@ -51,6 +61,14 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
+				<string>E6BB91C5-8661-40E6-BAFB-D7863034A832</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string>Open original word in Leo</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>2EFE8987-544C-4B60-9A2B-B43FEECCAFB7</string>
 				<key>modifiers</key>
 				<integer>131072</integer>
@@ -70,6 +88,14 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
+				<string>E6BB91C5-8661-40E6-BAFB-D7863034A832</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string>Open original word in Leo</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
 				<string>2EFE8987-544C-4B60-9A2B-B43FEECCAFB7</string>
 				<key>modifiers</key>
 				<integer>131072</integer>
@@ -87,6 +113,14 @@
 		</array>
 		<key>A5B006F8-E55B-455E-9940-D0D10C03BBD2</key>
 		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E6BB91C5-8661-40E6-BAFB-D7863034A832</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string>Open original word in Leo</string>
+			</dict>
 			<dict>
 				<key>destinationuid</key>
 				<string>2EFE8987-544C-4B60-9A2B-B43FEECCAFB7</string>
@@ -123,12 +157,16 @@
 				<key>argument</key>
 				<integer>1</integer>
 				<key>hotkey</key>
-				<integer>0</integer>
+				<integer>2</integer>
 				<key>hotmod</key>
-				<integer>0</integer>
+				<integer>1835008</integer>
+				<key>hotstring</key>
+				<string>D</string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
 				<integer>0</integer>
 			</dict>
 			<key>type</key>
@@ -136,7 +174,7 @@
 			<key>uid</key>
 			<string>2EF3E9DB-AFD7-42E2-B185-AD8854B48861</string>
 			<key>version</key>
-			<integer>0</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -175,13 +213,13 @@ echo $leo-&gt;getTranslations($in);</string>
 			<key>config</key>
 			<dict>
 				<key>escaping</key>
-				<integer>36</integer>
+				<integer>127</integer>
 				<key>script</key>
 				<string>require('utils.php');
 
-$url = "{query}";
+$in = "{query}";
 
-preg_match("/{([^}]*)}(.*)/", $url, $matchResult);
+preg_match("/\{([^}]*)\s*\}\{([^}]*)\s*\}\{([^}]*)\s*\}/", $in, $matchResult);
 
 $translationCode = $matchResult[1];
 $cleanedString = trim(preg_replace("/\s*\[[^]]*\]/", "", $matchResult[2]));
@@ -194,9 +232,9 @@ shell_exec("open '$url'");</string>
 				<integer>1</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.script</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>2EFE8987-544C-4B60-9A2B-B43FEECCAFB7</string>
+			<string>E6BB91C5-8661-40E6-BAFB-D7863034A832</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -230,6 +268,35 @@ echo $leo-&gt;getTranslations($in);</string>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>46CE4D42-DAE7-441F-8869-28CBDDD3DD4D</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>script</key>
+				<string>require('utils.php');
+
+$in = "{query}";
+
+preg_match("/\{([^}]*)\s*\}\{([^}]*)\s*\}\{([^}]*)\s*\}/", $in, $matchResult);
+
+$translationCode = $matchResult[1];
+$cleanedString = trim(preg_replace("/\s*\[[^]]*\]/", "", $matchResult[3]));
+$cleanedString = clean_utf8($cleanedString);
+
+$url = "http://dict.leo.org/".$translationCode."/?lang=en&amp;searchLoc=0&amp;search=".urlencode($cleanedString);
+
+shell_exec("open '$url'");</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>2EFE8987-544C-4B60-9A2B-B43FEECCAFB7</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -288,7 +355,8 @@ echo $leo-&gt;getTranslations($in);</string>
 				<integer>36</integer>
 				<key>script</key>
 				<string>$in = "{query}";
-echo preg_replace("/\s*\{[^]]*\}/", "", $in);</string>
+preg_match("/\{([^}]*)\s*\}\{([^}]*)\s*\}\{([^}]*)\s*\}/", $in, $matches);
+echo $matches[3];</string>
 				<key>type</key>
 				<integer>1</integer>
 			</dict>
@@ -307,7 +375,7 @@ echo preg_replace("/\s*\{[^]]*\}/", "", $in);</string>
 				<key>escaping</key>
 				<integer>36</integer>
 				<key>keyword</key>
-				<string>pl</string>
+				<string>dp</string>
 				<key>runningsubtext</key>
 				<string>Retrieving suggestions from Leo</string>
 				<key>script</key>
@@ -334,13 +402,14 @@ echo $leo-&gt;getTranslations($in);</string>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string>Updated by Hans Raaf (6.3.2014)
+https://github.com/oderwat/alfredapp</string>
 	<key>uidata</key>
 	<dict>
 		<key>206533A2-C691-4EBD-9DCE-29FFF6E4C718</key>
 		<dict>
 			<key>ypos</key>
-			<real>260</real>
+			<real>330</real>
 		</dict>
 		<key>2EF3E9DB-AFD7-42E2-B185-AD8854B48861</key>
 		<dict>
@@ -350,17 +419,17 @@ echo $leo-&gt;getTranslations($in);</string>
 		<key>2EFE8987-544C-4B60-9A2B-B43FEECCAFB7</key>
 		<dict>
 			<key>ypos</key>
-			<real>150</real>
+			<real>260</real>
 		</dict>
 		<key>37D9603A-6C24-45F8-A9A1-6A68733C07D6</key>
 		<dict>
 			<key>ypos</key>
-			<real>320</real>
+			<real>410</real>
 		</dict>
 		<key>46CE4D42-DAE7-441F-8869-28CBDDD3DD4D</key>
 		<dict>
 			<key>ypos</key>
-			<real>150</real>
+			<real>190</real>
 		</dict>
 		<key>9066ECA5-A314-4CB1-98F4-5171E14A6706</key>
 		<dict>
@@ -370,12 +439,17 @@ echo $leo-&gt;getTranslations($in);</string>
 		<key>A5B006F8-E55B-455E-9940-D0D10C03BBD2</key>
 		<dict>
 			<key>ypos</key>
-			<real>380</real>
+			<real>470</real>
 		</dict>
 		<key>DC652A86-C1F2-43AF-BD30-510EC00724E7</key>
 		<dict>
 			<key>ypos</key>
-			<real>320</real>
+			<real>410</real>
+		</dict>
+		<key>E6BB91C5-8661-40E6-BAFB-D7863034A832</key>
+		<dict>
+			<key>ypos</key>
+			<real>100</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>

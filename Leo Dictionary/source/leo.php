@@ -24,7 +24,8 @@ class Leo {
 		
 			if ($options != array()) {
 				foreach($options as $option) {
-					$w->result(time(), "{".$this->translationCode."}".$option->translatedWord, $option->translatedWord, $option->originalWord, $option->languageCode.".png", "yes", $option->originalWord);
+					$argument = "{".$this->translationCode."}{".$option->originalWord."}{".$option->translatedWord."}";
+					$w->result(time(), $argument, $option->translatedWord, $option->originalWord, $option->languageCode.".png", "yes", $option->originalWord);
 				}
 			}
 		} else {

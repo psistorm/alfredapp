@@ -38,7 +38,6 @@ class LeoParser{
 			$languageCode = $this->getLanguageCode($element);
 			
 			$value = utf8_decode(trim($element->nodeValue));
-			
 			if ($i % 2 != 0) {
 				if ($isSearchWord) {
 					$resultEntry->originalWord = $value;

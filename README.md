@@ -35,4 +35,12 @@ V 1.2.1:
 V 1.3
 - Added support for translation of german to polish and vice versa ([Sebastian Kusnier][kusnier])
 
+V 1.3.1
+- Quick fix for changes in Leo site to make the workflow work again ([Oderwat][oderwat])
+
+V 1.4
+- Added timeout for php request to avoid high process load when loosing internet connection.
+- Open Leo with the originally entered word when hitting 'Ctrl+Enter'.
+
 [kusnier]: https://github.com/kusnier
+[oderwat]: https://github.com/oderwat

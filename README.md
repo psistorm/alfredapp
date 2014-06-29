@@ -16,7 +16,7 @@ There are three ways to search Leo:
 * ds - Translating a german word to spanish and vice versa.
 * dp - Translating a german word to polish and vice versa.
 
-Download the workflow: [Leo Dictionary](https://github.com/psistorm/alfredapp/blob/master/Leo%20Dictionary/LeoDictionary.alfredworkflow?raw=true)
+Download the workflow: [Leo Dictionary](https://github.com/psistorm/alfredapp/blob/master/Leo%20Dictionary/Leo%20Dictionary.alfredworkflow?raw=true)
 
 Release Notes:
 

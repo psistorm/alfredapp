@@ -42,5 +42,9 @@ V 1.4
 - Added timeout for php request to avoid high process load when loosing internet connection.
 - Open Leo with the originally entered word when hitting 'Ctrl+Enter'.
 
+V 1.4.1
+- Fix for changes in Leo site, now using the XML ([Daniel Diekmeier][danieldiekmeier])
+
 [kusnier]: https://github.com/kusnier
 [oderwat]: https://github.com/oderwat
+[danieldiekmeier]: https://github.com/danieldiekmeier

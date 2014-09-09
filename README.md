@@ -43,7 +43,7 @@ V 1.4
 - Open Leo with the originally entered word when hitting 'Ctrl+Enter'.
 
 V 1.4.1
-- Fix for changes in Leo site, now using the XML ([Daniel Diekmeier][danieldiekmeier])
+- Fix for changes in Leo site, now using the XML API ([Daniel Diekmeier][danieldiekmeier])
 
 [kusnier]: https://github.com/kusnier
 [oderwat]: https://github.com/oderwat

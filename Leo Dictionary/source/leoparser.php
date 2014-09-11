@@ -32,11 +32,11 @@ class LeoParser{
 		$resultEntry->languageCode = $languageCode;
 
 		if ($languageCode == 'de') {
-			$originalWord   = $entries->item(0)->nodeValue;
 			$translatedWord = $entries->item(1)->nodeValue;
+			$originalWord   = $entries->item(0)->nodeValue;
 		} else {
-			$translatedWord = $entries->item(1)->nodeValue;
-			$originalWord   = $entries->item(0)->nodeValue;
+			$translatedWord = $entries->item(0)->nodeValue;
+			$originalWord   = $entries->item(1)->nodeValue;
 		}
 
 		$resultEntry->originalWord = utf8_decode(trim($originalWord));

@@ -1,87 +1,54 @@
 <?php
 
 class LeoParser{
-	
+
 	function get($input) {
 		libxml_use_internal_errors( true );
 		libxml_clear_errors();
-		
+
 		$doc = new DOMDocument();
 		$doc->loadHtml($input);
 		$xpath = new DOMXPath($doc);
-		$mainElements = $xpath->query("//div[@class='section wgt']");
-		
+		$entries = $xpath->query("//entry");
+
 		$resultArray = array();
-		foreach ($mainElements as $mainElement) {
-			$this->parseEntries($doc->saveHtml($mainElement), $resultArray);
+		foreach ($entries as $entry) {
+			$this->parseEntry($doc->saveHtml($entry), $resultArray);
 		}
 		return $resultArray;
 	}
-	
-	function parseEntries($input, array & $resultArray) {
+
+	function parseEntry($input, array & $resultArray) {
 		$wordDoc = new DOMDocument();
 		$wordDoc->loadHtml($input);
 		$wordXPath = new DOMXPath($wordDoc);
-		$elements = $wordXPath->query("//table/*/tr/td[@data-dz-attr='relink']");
+		$secondColumn = $wordXPath->query('//side[@hc="0"]');
+		$entries = $wordXPath->query('//side/words/word');
 		$output = "";
 
-		$i = 1;
-		$resultEntry = new ParserResult();		
-		foreach ($elements as $element) {
-			$subElements = $element->getElementsByTagName("small");
-			do {
-				$moreTags = $this->removeSmallTags($element);
-			} while($moreTags != 0);
-			$this->removeSmallTags($element);
+		$resultEntry = new ParserResult();
 
-			$isSearchWord = $this->isSearchWord($element);
-			$languageCode = $this->getLanguageCode($element);
-			
-			$value = utf8_decode(trim($element->nodeValue));
-			if ($i % 2 != 0) {
-				if ($isSearchWord) {
-					$resultEntry->originalWord = $value;
-				} else {
-					$resultEntry->languageCode = $languageCode;
-					$resultEntry->translatedWord = $value;
-				}
-			} else {
-				if ($resultEntry->languageCode == "") {
-					$resultEntry->languageCode = $languageCode;
-					$resultEntry->translatedWord = $value;
-				} else {
-					$resultEntry->originalWord = $value;
-				}
-		    	array_push($resultArray, $resultEntry);
-				$resultEntry = new ParserResult();
- 			}
-			$i++;
+		$languageCode = $secondColumn->item(0)->getAttribute("lang");
+		$resultEntry->languageCode = $languageCode;
+
+		if ($languageCode == 'de') {
+			$translatedWord = $entries->item(1)->nodeValue;
+			$originalWord   = $entries->item(0)->nodeValue;
+		} else {
+			$translatedWord = $entries->item(0)->nodeValue;
+			$originalWord   = $entries->item(1)->nodeValue;
 		}
+
+		$resultEntry->originalWord = utf8_decode(trim($originalWord));
+		$resultEntry->translatedWord = utf8_decode(trim($translatedWord));
+
+		array_push($resultArray, $resultEntry);
 	}
-	
-	function removeSmallTags(DOMElement $element) {
-		$subElements = $element->getElementsByTagName("small");
-		try {
-			foreach ($subElements as $subElement) {
-				$element->removeChild($subElement);
-			}
-		} catch(Exception $e) {
-		}
-		return $element->getElementsByTagName("small")->length;
-	}
-	
-	function isSearchWord(DOMElement $element) {
-		$subElements = $element->getElementsByTagName("b");
-		if ($subElements->length > 0) {
-			return true;
-		}
-		return false;
-	}
-	
+
 	function getLanguageCode(DOMElement $element) {
 		return $element->getAttribute("lang");
 	}
-	
+
 }
 
 class ParserResult {

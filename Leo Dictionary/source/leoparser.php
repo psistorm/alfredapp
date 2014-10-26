@@ -45,8 +45,8 @@ class LeoParser{
 			$languageCode = $firstLanguage;
 		}
 		$resultEntry = new ParserResult();
-		$resultEntry->originalWord = utf8_decode(trim($originalWord));
-		$resultEntry->translatedWord = utf8_decode(trim($translatedWord));
+		$resultEntry->originalWord = $originalWord;// utf8_decode(trim($originalWord));
+		$resultEntry->translatedWord = $translatedWord;//utf8_decode(trim($translatedWord));
 		$resultEntry->languageCode = $languageCode;
 		
 		array_push($resultArray, $resultEntry);

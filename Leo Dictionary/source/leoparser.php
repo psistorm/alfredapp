@@ -1,60 +1,63 @@
 <?php
-
+ 
 class LeoParser{
-
+ 
+	protected $hitCount = 0;
+	protected $leftHitCount = 0;
+	protected $rightHitCount = 0;
+	protected $queryWord;
+	
 	function get($input) {
 		libxml_use_internal_errors( true );
 		libxml_clear_errors();
-
-		$doc = new DOMDocument();
-		$doc->loadHtml($input);
-		$xpath = new DOMXPath($doc);
-		$entries = $xpath->query("//entry");
-
+ 
+		$xml = new SimpleXMLElement($input);
+		$searchTag = $xml->xpath("/xml/search");
+		
+		$this->hitCount = intval($searchTag[0]->attributes()->hitcount);
+		$this->leftHitCount = intval($searchTag[0]->attributes()->hitWordCntLeft);
+		$this->rightHitCount = intval($searchTag[0]->attributes()->hitWordCntRight);
+ 
 		$resultArray = array();
+		$entries = $xml->xpath("//entry");
 		foreach ($entries as $entry) {
-			$this->parseEntry($doc->saveHtml($entry), $resultArray);
+			$this->parseEntry($entry, $resultArray);
 		}
 		return $resultArray;
 	}
-
+ 
 	function parseEntry($input, array & $resultArray) {
-		$wordDoc = new DOMDocument();
-		$wordDoc->loadHtml($input);
-		$wordXPath = new DOMXPath($wordDoc);
-		$secondColumn = $wordXPath->query('//side[@hc="0"]');
-		$entries = $wordXPath->query('//side/words/word');
-		$output = "";
-
-		$resultEntry = new ParserResult();
-
-		$languageCode = $secondColumn->item(0)->getAttribute("lang");
-		$resultEntry->languageCode = $languageCode;
-
-		if ($languageCode == 'de') {
-			$translatedWord = $entries->item(1)->nodeValue;
-			$originalWord   = $entries->item(0)->nodeValue;
+		$firstColumn = $input->side[0];
+		$firstLanguage = (string) $firstColumn->attributes()->lang;
+		$firstText = $firstColumn->words[0]->word;
+		
+		$secondColumn = $input->side[1];
+		$secondLanguage = (string) $secondColumn->attributes()->lang;
+		$secondText = $secondColumn->words[0]->word;
+		
+		if ($this->leftHitCount > $this->rightHitCount) {
+			$originalWord = $firstText;
+			$translatedWord = $secondText;
+			$languageCode = $secondLanguage;
 		} else {
-			$translatedWord = $entries->item(0)->nodeValue;
-			$originalWord   = $entries->item(1)->nodeValue;
+			$originalWord = $secondText;
+			$translatedWord = $firstText;
+			$languageCode = $firstLanguage;
 		}
-
+		$resultEntry = new ParserResult();
 		$resultEntry->originalWord = utf8_decode(trim($originalWord));
 		$resultEntry->translatedWord = utf8_decode(trim($translatedWord));
-
+		$resultEntry->languageCode = $languageCode;
+		
 		array_push($resultArray, $resultEntry);
 	}
-
-	function getLanguageCode(DOMElement $element) {
-		return $element->getAttribute("lang");
-	}
-
+ 
 }
-
+ 
 class ParserResult {
 	public $translatedWord = "";
 	public $originalWord = "";
 	public $languageCode = "";
 }
-
+ 
 ?>

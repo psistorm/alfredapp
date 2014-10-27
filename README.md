@@ -45,6 +45,9 @@ V 1.4
 V 1.4.1
 - Fix for changes in Leo site, now using the XML API ([Daniel Diekmeier][danieldiekmeier])
 
+V 1.4.2
+- Changing the used PHP XML library, fixing issues occurred in 1.4.1
+
 [kusnier]: https://github.com/kusnier
 [oderwat]: https://github.com/oderwat
 [danieldiekmeier]: https://github.com/danieldiekmeier

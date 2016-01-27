@@ -15,6 +15,7 @@ There are three ways to search Leo:
 * df - Translating a German word to French and vice versa.
 * ds - Translating a German word to Spanish and vice versa.
 * di - Translating a German word to Italian and vice versa.
+* dc - Translating a German word to Chinese and vice versa.
 * dr - Translating a German word to Russian and vice versa.
 * db - Translating a German word to Portuguese and vice versa.
 * dp - Translating a German word to Polish and vice versa.
@@ -51,6 +52,11 @@ V 1.4.1
 V 1.4.2
 - Changing the used PHP XML library, fixing issues occurred in 1.4.1
 
+V 1.5
+- Added support for translation of German to Italian, Chinese, Russian and Portuguese and vice versa ([Lorenz Schmid][schmidlorenz])
+
+
 [kusnier]: https://github.com/kusnier
 [oderwat]: https://github.com/oderwat
 [danieldiekmeier]: https://github.com/danieldiekmeier
+[schmidlorenz]: https://github.com/schmidlorenz

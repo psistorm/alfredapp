@@ -4,8 +4,37 @@
 <dict>
 	<key>bundleid</key>
 	<string>psistorm.alfed.leo</string>
+	<key>category</key>
+	<string>Search</string>
 	<key>connections</key>
 	<dict>
+		<key>034338E9-7D1E-42D9-8B19-A0E5D7CED64C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E6BB91C5-8661-40E6-BAFB-D7863034A832</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string>Open original word in Leo</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>2EFE8987-544C-4B60-9A2B-B43FEECCAFB7</string>
+				<key>modifiers</key>
+				<integer>131072</integer>
+				<key>modifiersubtext</key>
+				<string>Open translation with Leo</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>37D9603A-6C24-45F8-A9A1-6A68733C07D6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>206533A2-C691-4EBD-9DCE-29FFF6E4C718</key>
 		<array>
 			<dict>
@@ -56,6 +85,60 @@
 			</dict>
 		</array>
 		<key>46CE4D42-DAE7-441F-8869-28CBDDD3DD4D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E6BB91C5-8661-40E6-BAFB-D7863034A832</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string>Open original word in Leo</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>2EFE8987-544C-4B60-9A2B-B43FEECCAFB7</string>
+				<key>modifiers</key>
+				<integer>131072</integer>
+				<key>modifiersubtext</key>
+				<string>Open translation with Leo</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>37D9603A-6C24-45F8-A9A1-6A68733C07D6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>61E335E4-1ECB-4586-9F78-9B57A06DE2EB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E6BB91C5-8661-40E6-BAFB-D7863034A832</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string>Open original word in Leo</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>2EFE8987-544C-4B60-9A2B-B43FEECCAFB7</string>
+				<key>modifiers</key>
+				<integer>131072</integer>
+				<key>modifiersubtext</key>
+				<string>Open translation with Leo</string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>37D9603A-6C24-45F8-A9A1-6A68733C07D6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>89D02EF7-C09D-41CA-A0D6-8450450D4EC8</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -150,33 +233,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>action</key>
-				<integer>0</integer>
-				<key>argument</key>
-				<integer>1</integer>
-				<key>hotkey</key>
-				<integer>2</integer>
-				<key>hotmod</key>
-				<integer>1835008</integer>
-				<key>hotstring</key>
-				<string>D</string>
-				<key>leftcursor</key>
-				<false/>
-				<key>modsmode</key>
-				<integer>0</integer>
-				<key>relatedAppsMode</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.hotkey</string>
-			<key>uid</key>
-			<string>2EF3E9DB-AFD7-42E2-B185-AD8854B48861</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
@@ -214,6 +270,33 @@ echo $leo-&gt;getTranslations($in);</string>
 			<string>9066ECA5-A314-4CB1-98F4-5171E14A6706</string>
 			<key>version</key>
 			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>hotkey</key>
+				<integer>2</integer>
+				<key>hotmod</key>
+				<integer>1835008</integer>
+				<key>hotstring</key>
+				<string>D</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>2EF3E9DB-AFD7-42E2-B185-AD8854B48861</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -362,15 +445,41 @@ echo $leo-&gt;getTranslations($in);</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>autopaste</key>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>keyword</key>
+				<string>di</string>
+				<key>queuedelaycustom</key>
+				<integer>1</integer>
+				<key>queuedelayimmediatelyinitially</key>
 				<false/>
-				<key>clipboardtext</key>
-				<string></string>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Retrieving suggestions from Leo</string>
+				<key>script</key>
+				<string>require('leo.php');
+
+$in = "{query}";
+$leo = new Leo("itde");
+echo $leo-&gt;getTranslations($in);</string>
+				<key>subtext</key>
+				<string>Translate with Leo (German/Italian)</string>
+				<key>title</key>
+				<string>Leo Dictionary</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
+			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>DC652A86-C1F2-43AF-BD30-510EC00724E7</string>
+			<string>89D02EF7-C09D-41CA-A0D6-8450450D4EC8</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -392,6 +501,103 @@ echo $matches[3];</string>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>37D9603A-6C24-45F8-A9A1-6A68733C07D6</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>DC652A86-C1F2-43AF-BD30-510EC00724E7</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>keyword</key>
+				<string>dr</string>
+				<key>queuedelaycustom</key>
+				<integer>1</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Retrieving suggestions from Leo</string>
+				<key>script</key>
+				<string>require('leo.php');
+
+$in = "{query}";
+$leo = new Leo("rude");
+echo $leo-&gt;getTranslations($in);</string>
+				<key>subtext</key>
+				<string>Translate with Leo (German/Russian)</string>
+				<key>title</key>
+				<string>Leo Dictionary</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>034338E9-7D1E-42D9-8B19-A0E5D7CED64C</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>keyword</key>
+				<string>db</string>
+				<key>queuedelaycustom</key>
+				<integer>1</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Retrieving suggestions from Leo</string>
+				<key>script</key>
+				<string>require('leo.php');
+
+$in = "{query}";
+$leo = new Leo("ptde");
+echo $leo-&gt;getTranslations($in);</string>
+				<key>subtext</key>
+				<string>Translate with Leo (German/Portuguese)</string>
+				<key>title</key>
+				<string>Leo Dictionary</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>61E335E4-1ECB-4586-9F78-9B57A06DE2EB</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -441,10 +647,15 @@ echo $leo-&gt;getTranslations($in);</string>
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>034338E9-7D1E-42D9-8B19-A0E5D7CED64C</key>
+		<dict>
+			<key>ypos</key>
+			<real>560</real>
+		</dict>
 		<key>206533A2-C691-4EBD-9DCE-29FFF6E4C718</key>
 		<dict>
 			<key>ypos</key>
-			<real>330</real>
+			<real>300</real>
 		</dict>
 		<key>2EF3E9DB-AFD7-42E2-B185-AD8854B48861</key>
 		<dict>
@@ -459,12 +670,22 @@ echo $leo-&gt;getTranslations($in);</string>
 		<key>37D9603A-6C24-45F8-A9A1-6A68733C07D6</key>
 		<dict>
 			<key>ypos</key>
-			<real>410</real>
+			<real>500</real>
 		</dict>
 		<key>46CE4D42-DAE7-441F-8869-28CBDDD3DD4D</key>
 		<dict>
 			<key>ypos</key>
-			<real>190</real>
+			<real>170</real>
+		</dict>
+		<key>61E335E4-1ECB-4586-9F78-9B57A06DE2EB</key>
+		<dict>
+			<key>ypos</key>
+			<real>690</real>
+		</dict>
+		<key>89D02EF7-C09D-41CA-A0D6-8450450D4EC8</key>
+		<dict>
+			<key>ypos</key>
+			<real>430</real>
 		</dict>
 		<key>9066ECA5-A314-4CB1-98F4-5171E14A6706</key>
 		<dict>
@@ -474,12 +695,12 @@ echo $leo-&gt;getTranslations($in);</string>
 		<key>A5B006F8-E55B-455E-9940-D0D10C03BBD2</key>
 		<dict>
 			<key>ypos</key>
-			<real>470</real>
+			<real>820</real>
 		</dict>
 		<key>DC652A86-C1F2-43AF-BD30-510EC00724E7</key>
 		<dict>
 			<key>ypos</key>
-			<real>410</real>
+			<real>500</real>
 		</dict>
 		<key>E6BB91C5-8661-40E6-BAFB-D7863034A832</key>
 		<dict>

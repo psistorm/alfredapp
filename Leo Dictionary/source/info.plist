@@ -4,8 +4,6 @@
 <dict>
 	<key>bundleid</key>
 	<string>psistorm.alfed.leo</string>
-	<key>category</key>
-	<string>Internet</string>
 	<key>connections</key>
 	<dict>
 		<key>206533A2-C691-4EBD-9DCE-29FFF6E4C718</key>
@@ -185,6 +183,14 @@
 				<integer>36</integer>
 				<key>keyword</key>
 				<string>de</string>
+				<key>queuedelaycustom</key>
+				<integer>1</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
 				<key>runningsubtext</key>
 				<string>Retrieving suggestions from Leo</string>
 				<key>script</key>
@@ -212,6 +218,8 @@ echo $leo-&gt;getTranslations($in);</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
@@ -247,6 +255,14 @@ shell_exec("open '$url'");</string>
 				<integer>36</integer>
 				<key>keyword</key>
 				<string>df</string>
+				<key>queuedelaycustom</key>
+				<integer>1</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
 				<key>runningsubtext</key>
 				<string>Retrieving suggestions from Leo</string>
 				<key>script</key>
@@ -274,6 +290,8 @@ echo $leo-&gt;getTranslations($in);</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
 				<key>escaping</key>
 				<integer>36</integer>
 				<key>script</key>
@@ -309,6 +327,14 @@ shell_exec("open '$url'");</string>
 				<integer>36</integer>
 				<key>keyword</key>
 				<string>ds</string>
+				<key>queuedelaycustom</key>
+				<integer>1</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
 				<key>runningsubtext</key>
 				<string>Retrieving suggestions from Leo</string>
 				<key>script</key>
@@ -351,6 +377,8 @@ echo $leo-&gt;getTranslations($in);</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
 				<key>escaping</key>
 				<integer>36</integer>
 				<key>script</key>
@@ -376,6 +404,14 @@ echo $matches[3];</string>
 				<integer>36</integer>
 				<key>keyword</key>
 				<string>dp</string>
+				<key>queuedelaycustom</key>
+				<integer>1</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<false/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
 				<key>runningsubtext</key>
 				<string>Retrieving suggestions from Leo</string>
 				<key>script</key>

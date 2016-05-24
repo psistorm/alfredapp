@@ -34,6 +34,16 @@ class LeoParser{
 		$secondColumn = $input->side[1];
 		$secondLanguage = (string) $secondColumn->attributes()->lang;
 		$secondText = $secondColumn->words[0]->word;
+
+		// change input parsing for Chinese (different XML structure)
+		if ($firstLanguage == 'ch') {
+			$pinyin = isset($firstColumn->repr->cc->pn->b) ? $firstColumn->repr->cc->pn->b : $firstColumn->repr->cc->pn;
+			$firstText = $firstText->cc->cs .' ('. $pinyin .')';
+		}
+		if ($secondLanguage == 'ch') {
+			$pinyin = isset($firstColumn->repr->cc->pn->b) ? $firstColumn->repr->cc->pn->b : $firstColumn->repr->cc->pn;
+			$secondText = $secondText->cc->cs .' ('. $pinyin .')';
+		}
 		
 		if ($this->leftHitCount > $this->rightHitCount) {
 			$originalWord = $firstText;

@@ -343,7 +343,7 @@ $translationCode = $matchResult[1];
 $cleanedString = trim(preg_replace("/\s*\[[^]]*\]/", "", $matchResult[2]));
 $cleanedString = clean_utf8($cleanedString);
 
-$url = "http://dict.leo.org/".$translationCode."/?lang=en&amp;searchLoc=0&amp;search=".urlencode($cleanedString);
+$url = "https://dict.leo.org/".$translationCode."/?lang=en&amp;searchLoc=0&amp;search=".urlencode($cleanedString);
 
 shell_exec("open '$url'");</string>
 				<key>type</key>
@@ -415,7 +415,7 @@ $translationCode = $matchResult[1];
 $cleanedString = trim(preg_replace("/\s*\[[^]]*\]/", "", $matchResult[3]));
 $cleanedString = clean_utf8($cleanedString);
 
-$url = "http://dict.leo.org/".$translationCode."/?lang=en&amp;searchLoc=0&amp;search=".urlencode($cleanedString);
+$url = "https://dict.leo.org/".$translationCode."/?lang=en&amp;searchLoc=0&amp;search=".urlencode($cleanedString);
 
 shell_exec("open '$url'");</string>
 				<key>type</key>

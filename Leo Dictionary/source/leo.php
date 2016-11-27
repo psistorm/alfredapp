@@ -16,7 +16,7 @@ class Leo {
 		$leo = new LeoParser();
 
 		$cleanedInput = clean_utf8($input);
-		$url = "http://dict.leo.org/dictQuery/m-vocab/".$this->translationCode."/query.xml?tolerMode=nof&lp=".$this->translationCode."&lang=de&rmWords=off&directN=0&rmSearch=on&search=".urlencode($cleanedInput)."&searchLoc=0&resultOrder=basic&multiwordShowSingle=on&sectLenMax=16";
+		$url = "https://dict.leo.org/dictQuery/m-vocab/".$this->translationCode."/query.xml?tolerMode=nof&lp=".$this->translationCode."&lang=de&rmWords=off&directN=0&rmSearch=on&search=".urlencode($cleanedInput)."&searchLoc=0&resultOrder=basic&multiwordShowSingle=on&sectLenMax=16";
 
 		$str = $w->request($url, array(CURLOPT_CONNECTTIMEOUT => 5, CURLOPT_TIMEOUT => 5));
 		if (!empty($str)) {
